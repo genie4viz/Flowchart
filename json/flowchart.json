@@ -1,0 +1,97 @@
+{
+    "nodes":[
+        {
+            "id": 0,
+            "category": "Start",
+            "level": 0,
+            "pos_index": 0,
+            "text": "Summerview"
+        },
+        {
+            "id": 1,
+            "category": "",
+            "level": 1,
+            "pos_index": 0,
+            "text": "Winter"
+        },
+        {
+            "id": 2,
+            "category": "",
+            "level": 1,
+            "pos_index": -1,
+            "text": "Beilfuss"
+        },
+        {
+            "id": 3,
+            "category": "",
+            "level": 1,
+            "pos_index": 1,
+            "text": "Tennessee"
+        },
+        {
+            "id": 4,
+            "category": "",
+            "level": 2,
+            "pos_index": 0,
+            "text": "Sullivan"
+        },
+        {
+            "id": 5,
+            "category": "",
+            "level": 3,
+            "pos_index": 0,
+            "text": "Summer Ridge"
+        },
+        {
+            "id": 6,
+            "category": "",
+            "level": 4,
+            "pos_index": 0,
+            "text": "Elgar"
+        }
+    ],
+    "links": [
+        {
+            "from": 0,
+            "to": 1,
+            "fromPort": "B",
+            "toPort": "T"
+        },
+        {
+            "from": 0,
+            "to": 1,
+            "fromPort": "B",
+            "toPort": "T"
+        },
+        {
+            "from": 0,
+            "to": 2,
+            "fromPort": "B",
+            "toPort": "T"
+        },
+        {
+            "from": 0,
+            "to": 3,
+            "fromPort": "B",
+            "toPort": "T"
+        },
+        {
+            "from": 1,
+            "to": 4,
+            "fromPort": "B",
+            "toPort": "T"
+        },
+        {
+            "from": 4,
+            "to": 5,
+            "fromPort": "B",
+            "toPort": "T"
+        },
+        {
+            "from": 5,
+            "to": 6,
+            "fromPort": "B",
+            "toPort": "T"
+        }
+    ]
+}

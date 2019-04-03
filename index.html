@@ -1,14 +1,128 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>KeyLine</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+
+    <!-- Leaflet css and js-->
+
+    <link rel="stylesheet" href="css/leaflet/leaflet.css">
+    <link href="css/leaflet/leaflet.label.css" rel="stylesheet">
+    <link href="css/leaflet/map.css" rel="stylesheet">
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="js/leaflet/leaflet.js"></script>
+    <script src="js/leaflet/leaflet.label.js"></script>
+
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/colorPicker.css" rel="stylesheet">
+    <!-- D3.JS css style-->
+    <link href="css/d3/d3-context-menu.css" rel="stylesheet">
+    <link href="css/d3/style.css" rel="stylesheet">
+
+</head>
+
 <body>
-  <h1 style="width:100%;font-size: 20px; color:blueviolet; text-align: center;">Flowchart</h1>
-  <br>
-  <div style="display: inline-flex; width: 100%; justify-content: center;">
-    <div style="font-size:16px;">Year&nbsp;&nbsp;&nbsp;</div><div id="select-year"></div>
-  </div>
-  <div id="data-viz"></div>
-  <script src="d3.v5.min.js"></script>
-  <script src="flowchart.js"></script>
+    <!-- Graph drawing zone-->
+    <div id='svg-zone'>
+        <svg class="drawing-zone"></svg>
+    </div>
+    <div id='map-zone'></div>
+
+    <div class="top-pane">
+        <div class="top-pane-view ml-2 mt-2">
+            <div class="logo">
+                <h2 class="p-0 m-0 mr-5">KeyLine</h2>
+            </div>
+            <div class="switch-pane">
+                <div class="btn-group">
+                    <button id="social-group" class="btn btn-sm btn-custom dropdown-toggle" type="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Social
+                    </button>
+                    <div class="dropdown-menu">
+                        <a id="social-normal" class="dropdown-item active" href="#">Normal</a>
+                        <a id="social-degree" class="dropdown-item" href="#">Degree</a>
+                        <a id="social-pagerank" class="dropdown-item" href="#">Page Rank</a>
+                    </div>
+                </div>
+                <button id="geospatial" class="btn btn-custom btn-sm" type="button">
+                    Geospatial
+                </button>
+                <button id="flowchart" class="btn btn-custom btn-sm" type="button">
+                    Flowchart
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="zoom-pane">
+        <div id="zoom-plus" class="zoom-button"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></div>
+        <div id="zoom-minus" class="zoom-button"><i class="fa fa-minus fa-lg" aria-hidden="true"></i></div>
+        <div id="zoom-home" class="zoom-button"><i class="fa fa-home fa-lg" aria-hidden="true"></i></div>
+    </div>
+    <!-- <div id="expand-all-button">Expand All</div> -->
+    <div id="json-select-pane" class="float-pane">
+        <div class="title-bar">
+            <p class="text-white">Select Json</p>
+        </div>
+        <div class="float-body mt-1">
+            <input type="file" id="fileinput" class="d-flex align-items-center ">
+        </div>
+    </div>
+    <div id="layout-pane" class="float-pane">
+        <div class="title-bar">
+            <p class="text-white">Layout</p>
+        </div>
+        <div class="float-body">
+            <div class="float-row-center">
+                <div class="switch-field">
+                    <input type="radio" id="standard-layout" name="switch_view_layout" value="standard-layout" checked />
+                    <label for="standard-layout" id="standard-layout-lbl" class="switch-label">Standard Layout</label>
+                    <input type="radio" id="hier-layout" name="switch_view_layout" value="hier-layout" />
+                    <label for="hier-layout" id="hier-layout-lbl" class="switch-label">Hierarchy Layout</label>
+                    <input type="radio" id="radial-layout" name="switch_view_layout" value="radial-layout" />
+                    <label for="radial-layout" id="radial-layout-lbl" class="switch-label">Radial Layout</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.colorPicker.min.js"></script>
+
+    <script type="text/javascript" src="js/immutable.js"></script>
+
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- D3.JS Core JavaScript -->
+    <script type="text/javascript" src="js/d3/core/d3.v4.min.js"></script>
+    <script type="text/javascript" src="js/d3/core/d3-selection-multi.v1.js"></script>
+    <script type="text/javascript" src="js/d3/core/d3-context-menu.js"></script>
+
+    <script type="text/javascript" src="js/d3/main.js"></script>
+    <script type="text/javascript" src="js/d3/kit.js"></script>    
+    <script type="text/javascript" src="js/d3/standard_layout.js"></script>
+    <script type="text/javascript" src="js/d3/hier_layout.js"></script>
+    <script type="text/javascript" src="js/d3/radial_layout.js"></script>
+    <script type="text/javascript" src="js/d3/geospatial_view.js"></script>
+    <script type="text/javascript" src="js/d3/flowchart.js"></script>
+
 </body>
 
 </html>

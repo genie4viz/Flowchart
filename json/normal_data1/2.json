@@ -1,0 +1,35 @@
+[
+    {
+        "type": "link",
+        "id": "2-8",
+        "id1": "2",
+        "id2": "8",
+        "t": "Broadway",
+        "c": "#ff8899",
+        "thick": "5"
+      },{
+        "type": "link",
+        "id": "2-9",
+        "id1": "2",
+        "id2": "9",
+        "t": "Launchway",
+        "c": "#ff8899",
+        "thick": "5"
+      },{
+        "type": "link",
+        "id": "2-10",
+        "id1": "2",
+        "id2": "10",
+        "t": "Downway",
+        "c": "#ff8899",
+        "thick": "5"
+      },{
+        "type": "link",
+        "id": "2-11",
+        "id1": "2",
+        "id2": "11",
+        "t": "Downway",
+        "c": "#ff8899",
+        "thick": "5"
+      }
+]

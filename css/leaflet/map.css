@@ -1,0 +1,5 @@
+.custom .leaflet-popup-tip,
+.custom .leaflet-popup-content-wrapper {
+    background: #ddd;
+    color: #333;
+}

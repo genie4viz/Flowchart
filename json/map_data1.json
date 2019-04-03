@@ -1,0 +1,92 @@
+{
+    "type": "LinkChart",
+    "items": [
+        {
+            "type": "node",
+            "id": "a",
+            "c": "#912220",
+            "t": "John",
+            "node_url": "http://localhost/",
+            "r": 25,
+            "pos": {
+                "lat": 40.738082,
+                "lng": -74.065880
+            }
+        },
+        {
+            "type": "node",
+            "id": "b",
+            "c": "#ff2220",
+            "t": "Dall",
+            "node_url": "http://localhost/",
+            "r": 25,
+            "pos": {
+                "lat": 40.366002,
+                "lng": -81.941198
+            }
+        },
+        {
+            "type": "node",
+            "id": "c",
+            "c": "#0ff000",
+            "t": "Jane",
+            "node_url": "http://localhost/",
+            "r": 25,
+            "pos": {
+                "lat": 63.077019,
+                "lng": -124.266
+            }
+        },
+        {
+            "type": "node",
+            "id": "d",
+            "c": "#0fff55",
+            "t": "Mally",
+            "node_url": "http://localhost/",
+            "r": 25,
+            "pos": {
+                "lat": 51.923491,
+                "lng": -0.339935
+            }
+        },
+        {
+            "type": "node",
+            "id": "e",
+            "c": "#8865ff",
+            "t": "Bantu",
+            "node_url": "http://localhost/",
+            "r": 25,
+            "pos": {
+                "lat": 47.380111,
+                "lng": 19.084061
+            }
+        },
+        {
+            "type": "link",
+            "id": "a-b",
+            "id1": "a",
+            "id2": "b",
+            "thick": 10,
+            "t": "Broadway",
+            "c": "#0088aa"
+        },
+        {
+            "type": "link",
+            "id": "a-c",
+            "id1": "a",
+            "id2": "c",
+            "thick": 10,
+            "t": "Localway",
+            "c": "#d800fa"
+        },
+        {
+            "type": "link",
+            "id": "d-e",
+            "id1": "d",
+            "id2": "e",
+            "thick": 10,
+            "t": "Middleway",
+            "c": "#f8006a"
+        }
+    ]
+}

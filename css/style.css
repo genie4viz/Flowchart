@@ -1,0 +1,364 @@
+*, ::before, ::after{
+    box-sizing: border-box;
+}
+
+html, body {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    stroke : rgb(41, 40, 40);
+}
+/*----------------------------main frame--------------------------*/
+/*--------------------------global style--------------------------*/
+hr { 
+    display: block;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+    border-color: #1C2331;
+} 
+
+.switch-field {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2px;
+}
+.switch-field input {    
+    clip: rect(0, 0, 0, 0);
+    height: 0px;
+    width: 0px;
+    border: 0;
+    overflow: hidden;
+}
+.switch-field label {    
+    width: 130px;
+    height: 25px;    
+    border: 1px solid#1C2331;
+    color: white;    
+    box-shadow: 2px 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);    
+    border-radius: .25rem!important;
+    display: inline-flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition:    all 0.1s ease-in-out;
+    -ms-transition:     all 0.1s ease-in-out;
+    -o-transition:      all 0.1s ease-in-out;
+    transition:         all 0.1s ease-in-out;
+}  
+.switch-field label:hover {
+      cursor: pointer;
+}  
+.switch-field input:checked + label {
+    color: #1C2331;
+    background-color: #f5f5f5;    
+    border: 1px solid#1C2331;    
+    box-shadow: 2px 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+}
+.switch-field-inline {
+    display: block;    
+    padding: 2px;
+}
+.switch-field-inline input {    
+    clip: rect(0, 0, 0, 0);
+    height: 0px;
+    width: 0px;
+    border: 0;
+    overflow: hidden;
+}
+.switch-field-inline label {    
+    width: 130px;
+    height: 25px;    
+    border: 1px solid#1C2331;
+    color: white;    
+    box-shadow: 2px 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);    
+    border-radius: .25rem!important;
+    display: inline-flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition:    all 0.1s ease-in-out;
+    -ms-transition:     all 0.1s ease-in-out;
+    -o-transition:      all 0.1s ease-in-out;
+    transition:         all 0.1s ease-in-out;
+}  
+.switch-field-inline label:hover {
+      cursor: pointer;
+}  
+.switch-field-inline input:checked + label {
+    color: #1C2331;
+    background-color: #f5f5f5;    
+    border: 1px solid#1C2331;    
+    box-shadow: 2px 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+}
+/*--------------------------top-pane-----------------------------*/
+.top-pane {
+    position: fixed;
+    box-shadow: 2px 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);    
+    background-color: #37474f!important;    
+    border-bottom: 1px solid#1C2331;    
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    height: 42px;    
+}
+
+.top-pane .top-pane-view {
+    display: inline-flex;    
+    justify-content: center;
+    left: 0;
+    right: 0;
+}
+.top-pane .top-pane-view .switch-pane {
+    width:800px;
+    left: 0;
+    right: 0;
+}
+.top-pane .logo {
+    text-shadow: 2px 4px 4px rgba(0, 0, 0);
+    background-color: #37474f!important;
+    color: white;
+}
+/*---------------------------ExpandAll option pane----------------*/
+
+#expand-all-button {
+    position: fixed;    
+    top: 140px;
+    left: 10px;
+    width: 100px;
+    height : 25px;
+    display: flex;
+    color: white;    
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 70px;
+    height: 25px;
+    background-color: #37474f!important;
+    border: 1px solid#1C2331;
+    box-shadow: 2px 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);    
+    border-radius: .25rem!important;
+    text-align: center;
+    cursor: pointer;
+}
+#expand-all-button:active {
+    background-color: #a5a5a5!important;
+    border: 1px solid#1C2331;
+    box-shadow: 2px 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+}
+/*---------------------------zoom-pane-----------------------------*/
+.zoom-pane {
+    position: fixed;
+    top: 54px;
+    left: 10px;
+    width: 28px;
+    height : 52px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+}
+.zoom-pane .zoom-button {
+    width: 28px;
+    height: 26px;
+    background-color: #37474f!important;
+    color: #a5a5a5;    
+    box-shadow: 2px 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);        
+    text-align: center;
+    cursor: pointer;        
+}
+.zoom-pane .zoom-button:active {
+    background-color: #a5a5a5!important;
+    color:#1C2331;
+    border: 1px solid #1C2331;
+    box-shadow: 2px 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);    
+}
+.zoom-pane #zoom-plus{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    border-top-left-radius: .25rem!important;
+    border-top-right-radius: .25rem!important;
+    border-left: 2px solid#1C2331;
+    border-top: 2px solid#1C2331;
+    border-bottom: 1px solid#1C2331;
+    border-right: 2px solid#1C2331;
+    
+}
+.zoom-pane #zoom-minus{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;    
+    border-left: 2px solid#1C2331;
+    border-bottom: 2px solid#1C2331;
+    border-right: 2px solid#1C2331;
+}
+.zoom-pane #zoom-home{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom-left-radius: .25rem!important;
+    border-bottom-right-radius: .25rem!important;    
+    border-left: 2px solid#1C2331;
+    border-bottom: 2px solid#1C2331;
+    border-right: 2px solid#1C2331;
+}
+/*---------------------------float-pane----------------------------*/
+.switch-label {
+    cursor: pointer;
+}
+.switch-label.disabled{
+    opacity: 0.65; 
+    cursor: not-allowed;
+}
+#layout-pane {
+    width: 154px;
+    height: 152px;
+    bottom: 2px;
+    left: 2px;
+}
+
+#json-select-pane {
+    width: 154px;
+    height: 60px;
+    bottom: 156px;
+    left: 2px;
+}
+#json-select-pane #fileinput {
+    width: 150px;
+}
+
+#all-commands-pane {
+    width: 154px;
+    height: 60px;
+    bottom: 518px;
+    left: 2px;   
+}
+
+.float-pane {
+    z-index: 1;
+    position: fixed;
+    box-shadow: 2px 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);    
+    background-color: #37474f!important;
+    border: 1px solid#1C2331;
+    border-radius: .25rem!important;
+    opacity: 0.8;    
+}
+
+.float-pane .title-bar {
+    height: 25px;
+    background-color: #1C2331!important;
+    box-shadow: 2px 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);    
+    text-align: center;
+    padding-top: 4px;
+}
+.float-pane .float-body {
+    padding: 2px;
+    color: #fff;
+}
+.float-pane .float-body .float-row-center {
+    display: flex;
+    justify-content: center;
+}
+.float-pane .float-body .float-row-left{
+    display: flex;
+    justify-content: left;    
+}
+
+.text-normal{    
+    width: 80px;
+    height: 22px;
+}
+.text-small{
+    width: 70px;
+    height: 22px;
+}
+
+
+/*----------------------btn-color in top pane*********************/
+.btn-custom, .btn-custom.active {
+    background-color: #1C2331!important;
+    color: #fff!important;
+}
+.btn-custom.disabled {
+    opacity: 0.65; 
+    cursor: not-allowed;
+ }
+ .dropdown-item {
+    background-color: #fff; 
+ }
+ .dropdown-item.active {
+    background-color: #37474f;
+}
+.dropdown-item:hover {
+    background-color: #37474f;
+}
+.dropdown-item.disabled {
+    opacity: 0.65; 
+    cursor: not-allowed;
+}
+
+
+
+/*---------------------------float-pane----------------------------*/
+
+/* zoom in/out */
+
+#svg-zone{
+    z-index: -100;
+    width : 100%;
+    height : 100%;
+    background-color : rgb(229, 226, 226);
+}
+#map-zone{
+    z-index: -100;
+    margin-top : 42px;
+    width : 100%;
+    height : 100%;
+    background-color : rgb(229, 226, 226);
+}
+.drawing-zone{    
+    margin-top : 42px;
+    width : 100%;
+    height : 100%;
+    background-color : rgb(229, 226, 226);
+}
+
+#hidden-file-upload{
+    display:none;
+}
+
+/****************/
+.context-zone{
+    display: none;    
+    left : 50px;
+    top : 50px;
+    width:200px;
+    height : 200px;
+    
+}
+.context-frame {
+    z-index: -1;
+    margin-top: -20px;
+    
+}
+.context-content{
+    width : 222px;
+    height : 200px;
+}
+.btn-expand {
+    z-index: 1;
+    width:120px;
+}
+.btn-collapse {
+    z-index: 1;
+    width:120px;
+}
