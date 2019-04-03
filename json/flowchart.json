@@ -1,11 +1,10 @@
 {
-    "nodes":[
-        {
+    "nodes": [{
             "id": 0,
             "category": "Start",
             "level": 0,
             "pos_index": 0,
-            "text": "Summerview"
+            "text": "Start"
         },
         {
             "id": 1,
@@ -48,50 +47,50 @@
             "level": 4,
             "pos_index": 0,
             "text": "Elgar"
+        },
+        {
+            "id": 7,
+            "category": "End",
+            "level": 5,
+            "pos_index": 0,
+            "text": "End"
         }
     ],
-    "links": [
-        {
+    "links": [{
             "from": 0,
-            "to": 1,
-            "fromPort": "B",
-            "toPort": "T"
+            "to": 1            
         },
         {
             "from": 0,
-            "to": 1,
-            "fromPort": "B",
-            "toPort": "T"
+            "to": 2            
         },
         {
             "from": 0,
-            "to": 2,
-            "fromPort": "B",
-            "toPort": "T"
-        },
-        {
-            "from": 0,
-            "to": 3,
-            "fromPort": "B",
-            "toPort": "T"
+            "to": 3
         },
         {
             "from": 1,
-            "to": 4,
-            "fromPort": "B",
-            "toPort": "T"
+            "to": 2            
+        },
+        {
+            "from": 1,
+            "to": 3
+        },
+        {
+            "from": 1,
+            "to": 4            
         },
         {
             "from": 4,
-            "to": 5,
-            "fromPort": "B",
-            "toPort": "T"
+            "to": 5            
         },
         {
             "from": 5,
-            "to": 6,
-            "fromPort": "B",
-            "toPort": "T"
+            "to": 6
+        },
+        {
+            "from": 6,
+            "to": 7
         }
     ]
 }
