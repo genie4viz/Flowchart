@@ -54,16 +54,16 @@ function draw_flowchart(json_file) {
             });
             linksArr = data.links;
             linksArr.forEach((e, i) => {
-                linksArr[i] = {
-                    fromPort: e.fromPort,
-                    toPort: e.toPort,
+                linksArr[i] = {                    
                     source: nodesArr.filter(n => n.id == e.from)[0],
                     target: nodesArr.filter(n => n.id == e.to)[0]
                 };
             });
         }
     });
-
+    var max_left = d3.min(nodesArr.map(d => d.cx)),
+        max_right = d3.max(nodesArr.map(d => d.cx));    
+    
     drawChart();
 
     function drawChart() {
@@ -116,41 +116,36 @@ function draw_flowchart(json_file) {
 
     }
 
-    //-------------------------- node mouse hover handler ---------------
-    function nodeMouseover(d) {
-
-    }
-
-    function nodeMouseout(d) {
-
-    }
-
-    function nodeClick(d) {
-
-    }
-
-    function getPath(d) {
+    function getPath(d) {        
         var source = d.source,
             target = d.target,
-            pathStr = '';
-        console.log(source.level + ":" + target.level)
+            pathStr = '',
+            dir = source.pos_index > target.pos_index ? -1 : 1,
+            dis = Math.abs(source.pos_index - target.pos_index),
+            lvl_dis = Math.abs(source.level - target.level);
+
         if (source.level == target.level) {
-            if (source.pos_index > target.pos_index) {
-                console.log("here")
-                pathStr = 'M' + (source.cx - r_w / 2) + ',' + source.cy + 'l-' + v_margin + ',0';
-            } else {
-                console.log("here1")
-                pathStr = 'M' + (source.cx + r_w / 2) + ',' + source.cy + 'l' + (v_margin) + ',0';
+            
+            pathStr = 'M' + (source.cx + dir * r_w / 2) + ',' + source.cy + 'l' + dir * v_margin/2 + ',0';
+            if(dis > 1){
+                pathStr += 'l0,' + (r_h / 2 + h_margin / 2) + 'l' + dir * (v_margin + r_w) + ',0l0,-' + (r_h / 2 + h_margin / 2);
             }
-        } else if (source.level < target.level) {
-            if (source.pos_index == target.pos_index) {
-                pathStr = 'M' + source.cx + ',' + (source.cy + r_h / 2) + 'l0' + ',' + h_margin + '';
-            } else {
-                pathStr = 'M' + source.cx + ',' + (source.cy + r_h / 2) + 'l0,' + h_margin / 2 + 'l' + target.pos_index * (v_margin + r_w) + ',0' + 'l0,' + h_margin / 2 + '';
-            }
-        } else {
-            pathStr = 'aaa';
+            pathStr += 'l' + dir * v_margin/2 + ',0';            
+        } else {            
+            pathStr = 'M' + source.cx + ',' + (source.cy + r_h / 2) + 'l0,' + h_margin / 2;
+            // if(lvl_dis == 1 && dis == 0 ){
+            //     pathStr += 'l' + (r_w + v_margin) * dir * dis + ',0';
+            // }else if(lvl_dis > 1 && dis > 0){
+            //     if(dir < 0){
+            //         pathStr += 'l' +  (max_left + r_w/2 + v_margin) * dir + ',0l0,' + lvl_dis * (h_margin + r_h) + 'l' + (max_left + r_w/2 + v_margin) * (-dir) + ',0';
+            //     }else{
+            //         pathStr += 'l' +  (max_right + r_w/2 + v_margin) * dir + ',0l0,' + lvl_dis * (h_margin + r_h) + 'l' + (max_left + r_w/2 + v_margin) * (-dir)  + ',0';
+            //     }
+            // }
+            pathStr += 'l0,' + h_margin / 2;
+            // console.log(pathStr)
         }
+        
         return pathStr;
     }
 
