@@ -1,71 +1,107 @@
 {
     "nodes": [{
             "id": 0,
-            "category": "Start",
-            "level": 0,
-            "pos_index": 0,
+            "category": "circle",
+            "i": 0,
+            "j": 3,
             "text": "Start"
         },
         {
             "id": 1,
-            "category": "",
-            "level": 1,
-            "pos_index": 0,
-            "text": "Winter"
-        },
-        {
-            "id": 2,
-            "category": "",
-            "level": 1,
-            "pos_index": -1,
+            "category": "rect",
+            "i": 1,
+            "j": 1,
             "text": "Beilfuss"
         },
         {
+            "id": 2,
+            "category": "rect",
+            "i": 1,
+            "j": 2,
+            "text": "Ceil"
+        },
+        {
             "id": 3,
-            "category": "",
-            "level": 1,
-            "pos_index": 1,
-            "text": "Tennessee"
+            "category": "rect",
+            "i": 1,
+            "j": 3,
+            "text": "Floor"
         },
         {
             "id": 4,
-            "category": "",
-            "level": 2,
-            "pos_index": 0,
-            "text": "Sullivan"
+            "category": "rect",
+            "i": 2,
+            "j": 1,
+            "text": "Caps"
         },
         {
             "id": 5,
-            "category": "",
-            "level": 3,
-            "pos_index": 0,
-            "text": "Summer Ridge"
+            "category": "rect",
+            "i": 2,
+            "j": 3,
+            "text": "Candy"
+        },
+        {
+            "id": 51,
+            "category": "rect",
+            "i": 2,
+            "j": 4,
+            "text": "Soda"
+        },
+        {
+            "id": 52,
+            "category": "rect",
+            "i": 2,
+            "j": 5,
+            "text": "Market"
+        },
+        {
+            "id": 16,
+            "category": "rect",
+            "i": 3,
+            "j": 2,
+            "text": "Beside"
         },
         {
             "id": 6,
-            "category": "",
-            "level": 4,
-            "pos_index": 0,
-            "text": "Elgar"
+            "category": "rect",
+            "i": 3,
+            "j": 3,
+            "text": "Crush"
         },
         {
             "id": 7,
-            "category": "End",
-            "level": 5,
-            "pos_index": 0,
-            "text": "End"
+            "category": "rect",
+            "i": 4,
+            "j": 3,
+            "text": "Pause"
         },
         {
             "id": 8,
-            "category": "",
-            "level": 1,
-            "pos_index": 2,
-            "text": "Lmita"
-        }  
+            "category": "rect",
+            "i": 5,
+            "j": 3,
+            "text": "Jeffery"
+        },
+        {
+            "id": 9,
+            "category": "rect",
+            "i": 6,
+            "j": 3,
+            "text": "Joking"
+        },
+        {
+            "id": 10,
+            "category": "circle",
+            "i": 7,
+            "j": 3,
+            "text": "End"
+        }
     ],
-    "links": [{
+    "links": [
+        {
             "from": 0,
-            "to": 1            
+            "to": 1
         },
         {
             "from": 0,
@@ -74,26 +110,26 @@
         {
             "from": 0,
             "to": 3
-        },        
-        {
-            "from": 1,
-            "to": 2            
         },
         {
-            "from": 1,
-            "to": 3
+            "from": 3,
+            "to": 4
         },
         {
-            "from": 1,
-            "to": 8
+            "from": 3,
+            "to": 1
         },
         {
-            "from": 1,
-            "to": 4            
+            "from": 3,
+            "to": 2
         },
         {
-            "from": 4,
+            "from": 3,
             "to": 5            
+        },
+        {
+            "from": 3,
+            "to": 16            
         },
         {
             "from": 5,
@@ -102,6 +138,34 @@
         {
             "from": 6,
             "to": 7
+        },
+        {
+            "from": 6,
+            "to": 8
+        },
+        {
+            "from": 7,
+            "to": 8
+        },
+        {
+            "from": 8,
+            "to": 9
+        },
+        {
+            "from": 9,
+            "to": 10            
+        },
+        {
+            "from": 5,
+            "to": 51            
+        },        
+        {
+            "from": 5,
+            "to": 52            
+        },        
+        {
+            "from": 52,
+            "to": 9           
         }
     ]
 }
